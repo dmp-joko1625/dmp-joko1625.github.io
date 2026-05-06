@@ -128,8 +128,32 @@
 body {
   background-color: var(--md-sys-color-surface);
   color: var(--md-sys-color-on-surface);
-  transition: all 0.2s ease-in-out;
   font-family: 'Itim';
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-container {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 100vh;
+}
+
+.controls {
+  padding: 16px;
+  background-color: var(--md-sys-color-surface-container);
+  border-radius: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
 }
 
 .card {

@@ -1,29 +1,24 @@
 const modeSelect = document.getElementById('theme-mode');
 const contrastSelect = document.getElementById('theme-contrast');
 
-function updateTheme() {
+function applyTheme() {
   const mode = modeSelect.value;
   const contrast = contrastSelect.value;
   
   document.documentElement.setAttribute('data-theme', mode);
   document.documentElement.setAttribute('data-contrast', contrast);
   
-  localStorage.setItem('theme-settings', JSON.stringify({ mode, contrast }));
+  localStorage.setItem('theme', mode);
+  localStorage.setItem('contrast', contrast);
 }
 
-// Event Listeners
-modeSelect.addEventListener('change', updateTheme);
-contrastSelect.addEventListener('change', updateTheme);
+modeSelect.addEventListener('change', applyTheme);
+contrastSelect.addEventListener('change', applyTheme);
 
-// Initialize from LocalStorage or System Preference
-const saved = JSON.parse(localStorage.getItem('theme-settings'));
-if (saved) {
-  modeSelect.value = saved.mode;
-  contrastSelect.value = saved.contrast;
-} else {
-  // Default to system dark/light preference
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  modeSelect.value = prefersDark ? 'dark' : 'light';
-}
+// Load saved settings
+const savedMode = localStorage.getItem('theme') || 'dark';
+const savedContrast = localStorage.getItem('contrast') || 'sc';
 
-updateTheme();
+modeSelect.value = savedMode;
+contrastSelect.value = savedContrast;
+applyTheme();
