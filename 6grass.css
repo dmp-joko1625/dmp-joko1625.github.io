@@ -6,19 +6,18 @@ body {
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface);
     transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'itim', cursive;
     min-height: 200vh; /* Forces a scrollbar for testing */
     /* Firefox Version */
-    /*scrollbar-width: thin;
+    scrollbar-width: thin;
     scrollbar-color: var(--md-sys-color-outline-variant) var(--md-sys-color-surface);
-    */
+    transition: scrollbar-color 0.3s ease, color 0.3s ease;
 }
 
 /* Customize the scrollbar track (the background) */
 ::-webkit-scrollbar {
-    background-color: var(--md-sys-color-primary);
     width: 12px;
     height: 12px;
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* The draggable part (the thumb) */
@@ -35,7 +34,8 @@ body {
 
 /* The track background */
 ::-webkit-scrollbar-track {
-    background: var(--md-sys-color-surface);
+    background-color: var(--md-sys-color-surface);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .main-container {
@@ -160,7 +160,7 @@ form {
     padding-top: 20px;
     border-top: 1px solid var(--md-sys-color-outline);
     text-align: center;
-    color: var(--md-sys-color-on-primary-container);
+    color: var(--md-sys-color-secondary);
     font-size: 0.9rem;
     opacity: 0.7;
 }
