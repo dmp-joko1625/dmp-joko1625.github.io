@@ -14,6 +14,7 @@
     document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
   </script>
 </head>
+
 <body>
   <h1 class="md-typescale-display-medium">Hello Material!</h1>
   <form>
@@ -35,4 +36,26 @@
       gap: 16px;
     }
   </style>
+  
+  <link rel="stylesheet" href="style.css">
+
+  <div class="controls">
+  <!-- Theme Toggle -->
+  <select id="theme-mode">
+    <option value="light">Light Mode</option>
+    <option value="dark">Dark Mode</option>
+  </select>
+
+  <!-- Contrast Toggle -->
+  <select id="theme-contrast">
+    <option value="sc">Standard Contrast</option>
+    <option value="mc">Medium Contrast</option>
+    <option value="hc">High Contrast</option>
+  </select>
+  </div>
+
+  <footer class="site-footer">
+            <p>&copy; 2026 Joko1625. All Rights Reserved.</p>     
+  </footer>
+
 </body>
