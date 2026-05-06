@@ -1,8 +1,9 @@
-const modeSelect = document.getElementById('theme-mode');
+const modeSwitch = document.getElementById('theme-toggle');
 const contrastSelect = document.getElementById('theme-contrast');
 
 function applyTheme() {
-  const mode = modeSelect.value;
+  // If switch is 'selected', it's dark mode. Otherwise, light.
+  const mode = modeSwitch.selected ? 'dark' : 'light';
   const contrast = contrastSelect.value;
   
   document.documentElement.setAttribute('data-theme', mode);
@@ -12,13 +13,17 @@ function applyTheme() {
   localStorage.setItem('contrast', contrast);
 }
 
-modeSelect.addEventListener('change', applyTheme);
+// Listen for the 'change' event on the switch
+modeSwitch.addEventListener('change', applyTheme);
 contrastSelect.addEventListener('change', applyTheme);
 
 // Load saved settings
 const savedMode = localStorage.getItem('theme') || 'dark';
 const savedContrast = localStorage.getItem('contrast') || 'sc';
 
-modeSelect.value = savedMode;
+// Set initial states
+modeSwitch.selected = (savedMode === 'light');
 contrastSelect.value = savedContrast;
+
+// Run once on load to apply the colors from your JSON
 applyTheme();
