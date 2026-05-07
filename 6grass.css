@@ -112,6 +112,12 @@ body {
     width: fit-content;
 }
 
+.interactive-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 .switch-item {
     display: flex;
     align-items: center;

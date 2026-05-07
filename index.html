@@ -60,10 +60,11 @@
     <div class="controls">
       <!-- Theme Light/Dark -->
       <div class="switch-item">
-        <md-filled-tonal-button id="theme-toggle" toggle>
+        <div class="interactive-row">
           <md-icon>light_mode</md-icon>
-          <md-icon slot="selectedIcon">dark_mode</md-icon>
-        </md-filled-tonal-button>
+          <md-switch id="theme-toggle" icons selected></md-switch>
+          <md-icon>dark_mode</md-icon>
+        </div>
       </div>
 
       <div class="divider"></div>
