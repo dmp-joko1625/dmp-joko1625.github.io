@@ -6,8 +6,10 @@
   <title>Joko1625's Homepage</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="6grass.css">
  
   <!-- Material Web Components -->
@@ -27,13 +29,13 @@
 
 <body>
   <div class="main-container">
-    <div class="banner-wrapper">
+    <div class="banner-wrapper"> 
       <img src="assets/githubbanner.png" alt="Profile Banner" class="banner-img">
     </div>
-
     <header class="header-info">
       <div class="header-left">
-        <h1 class="header_title">Joko1625's<br><span class="text-head">Homepage</span></h1>
+        <h1 class="header_title">Joko1625's<br><span class="text-head">Homepages</span></h1>
+        <div class="info-container">
           <div class="about-section">
             <h3 data-1625="about_title">About this Page</h3>
             <p data-1625="about_desc">
@@ -41,6 +43,18 @@
               Here, feel free to explore
             </p>
           </div>
+          <div class="bio-section">
+            <h3 class="bio_title">My Bio</h3>
+            <p data-1625="bio_desc">
+              <strong>Name:</strong> Joko<br>
+              <strong>Age:</strong> Secret<br>
+              <strong>Gender:</strong> Female<br>
+              <strong>Country:</strong> Thailand<br>
+              <strong>Birthday:</strong> 6/10/Secret<br>
+            <span class="tag">Ambivert</span>
+            </p>
+          </div>
+        </div>
       </div>
 
       <div class="header-right">
@@ -48,53 +62,44 @@
           <a href="https://github.com/dmp-joko1625" target="_blank" data-tooltip="GitHub">
             <i class="fa-brands fa-github"></i>
           </a>
+          <a href="https://www.facebook.com/dmp.joko1625" target="_blank" data-tooltip="Facebook Profile">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
           <a href="https://discord.gg/MUppdaefvw" target="_blank" data-tooltip="My Discord Server">
             <i class="fa-brands fa-discord"></i>
           </a>
-          <md-filled-button class="lang" id="lang-toggle" onclick="toggleLanguage()">View this page in English</md-filled-button>
         </div>
       </div>
     </header>
-
-    <h1 class="md-typescale-display-medium">Hello Material!</h1>
-    <div class="controls">
-      <!-- Theme Light/Dark -->
-      <div class="switch-item">
-        <div class="interactive-row">
-          <md-icon>light_mode</md-icon>
-          <md-switch id="theme-toggle" icons selected></md-switch>
-          <md-icon>dark_mode</md-icon>
-        </div>
-      </div>
-
-      <div class="divider"></div>
-      <!-- Contrast Selection -->
-      <div class="switch-item">
-        <md-filled-button><span class="md-typescale-label-large">Contrast</span></md-filled-button>
-        <select id="theme-contrast">
-          <option value="sc">Standard</option>
-          <option value="mc">Medium</option>
-          <option value="hc">High</option>
-        </select>
-      </div>
-    </div>
-
-    <form>
-      <p class="md-typescale-body-medium">Check out these controls in a form!</p>
-      <md-checkbox touch-target="wrapper"></md-checkbox>
-      <div class="radio-group">
-        <md-radio name="group" value="1"></md-radio>
-        <md-radio name="group" value="2"></md-radio>
-        <md-radio name="group" value="3"></md-radio>
-      </div>
-      <md-outlined-text-field label="Favorite color" value="Green"></md-outlined-text-field>
-      <md-outlined-button type="reset">Reset</md-outlined-button>
-    </form>
 
     <footer class="site-footer">
       <p>&copy; 2026 Joko1625. All Rights Reserved.</p>     
     </footer>
   </div>
+
+  <div class="settings-floating-widget">
+    <!-- Theme Light/Dark -->
+    <div class="switch-item">
+      <md-filled-icon-button id="theme-toggle" toggle selected>
+      <md-icon>light_mode</md-icon>
+      <md-icon slot="selected">dark_mode</md-icon>
+      </md-filled-icon-button>
+    </div>
+    <div class="divider"></div>
+    <!-- S/M/H Contrast -->
+    <div class="switch-item">
+      <md-outlined-select id="theme-contrast">
+        <md-select-option selected value="sc">Standard Contrast</md-select-option>
+        <md-select-option value="mc">Medium Contrast</md-select-option>
+        <md-select-option value="hc">High Contrast</md-select-option>
+      </md-outlined-select>
+    </div>
+    <div class="divider"></div>
+    <!-- EN/TH Language -->
+    <md-filled-button class="language" id="lang-toggle" onclick="toggleLanguage()">EN</md-filled-button>
+  </div>
+
   <script src="9touch.js"></script>
+
 </body>
 </html>

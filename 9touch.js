@@ -3,25 +3,28 @@ const translations = {
     th: {
         // Titles
         about_title: 'About this Page',
+        about_desc: 'ยินดีต้อนรับสู่หน้าโฮมเพจส่วนตัวของฉัน! เว็บไซต์นี้เป็นสนามทดลองสำหรับฉันในการทดลองพัฒนาเว็บและออกแบบ ที่นี่คุณสามารถสำรวจได้อย่างอิสระ [Ai-Translation]',
+        bio_desc: '<strong>ชื่อ:</strong> โจโกะ<br><strong>อายุ:</strong> ไม่ระบุ<br><strong>เพศ:</strong> ผู้หญิง<br><strong>ประเทศ:</strong> ไทย<br><strong>วันเกิด:</strong> 6/10/ไม่ระบุ<br><span class="tag">Ambivert</span>',
 
         // Categories
 
         // Descriptions
 
         // Button Text
-        btn_toggle: 'View this page in English'
+        btn_toggle: 'TH'
     },
     en: {
         // Titles
         about_title: 'About this Page',
         about_desc: 'Welcome to my personal homepage! This site is a playground for me to experiment with web development and design. Here, feel free to explore',
+        bio_desc: '<strong>Name:</strong> Joko<br><strong>Age:</strong> Secret<br><strong>Gender:</strong> Female<br><strong>Country:</strong> Thailand<br><strong>Birthday:</strong> 6/10/Secret<br><span class="tag">Ambivert</span>',
 
         // Categories
 
         // Descriptions
 
         // Button Text
-        btn_toggle: 'กดที่นี่เพื่อดูเว็บภาษาไทย'
+        btn_toggle: 'EN'
     }
 };
 
@@ -33,9 +36,9 @@ function toggleLanguage() {
 }
 
 function updateTranslations() {
-    const elements = document.querySelectorAll('[data-i18n]');
+    const elements = document.querySelectorAll('[data-1625]');
     elements.forEach(el => {
-        const key = el.getAttribute('data-i18n');
+        const key = el.getAttribute('data-1625');
         if (key === 'system_online') {
             el.innerHTML = translations[currentLang][currentStatusKey] || translations[currentLang]['system_normal'];
         } else if (translations[currentLang][key]) {
