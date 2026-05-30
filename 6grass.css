@@ -6,7 +6,6 @@ body {
     background-color: var(--md-sys-color-surface);
     color: var(--md-sys-color-on-surface);
     transition: background-color 0.5s ease, color 0.5s ease;
-    font-family: 'Google Sans Flex', sans-serif;
     min-height: 100vh;
     /* Firefox Version */
     /*scrollbar-width: thin;
@@ -137,14 +136,14 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 24px;
-    background-color: var(--md-sys-color-primary);
+    background-color: var(--md-sys-color-primary-fixed-dim);
     text-decoration: none;
     position: relative;
 }
 
 .social-icons a:hover {
     color: var(--md-sys-color-primary);
-    background-color: rgb(from var(--md-sys-color-primary) r g b / 0.8);
+    background-color: rgb(from var(--md-sys-color-primary-fixed-dim) r g b / 0.8);
 }
 
 .social-icons a::before {
@@ -211,9 +210,9 @@ body {
     gap: 20px;
     padding: 24px;
     background-color: var(--md-sys-color-surface-container);
-    border-radius: 28px; /* M3 extra rounded style */
+    border-radius: 28px;
     width: fit-content;
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: background-color 0.5s ease;
 }
 
 .switch-item {
@@ -234,6 +233,7 @@ body {
 md-icon {
     font-family: 'Material Symbols Outlined';
     color: var(--md-sys-color-primary-fixed-variant);
+    transition: color 0.5s ease;
 }
 i.fa-brands {
     color: var(--md-sys-color-primary-container);
@@ -281,12 +281,13 @@ i.fa-brands.fa-facebook {
     right: 24px;
     z-index: 1000;
     
-    background-color: rgb(from var(--md-sys-color-primary-fixed-variant) r g b / 0.75);
+    background-color: rgb(from var(--md-sys-color-primary-container) r g b / 0.75);
     backdrop-filter: blur(5px);
     color: var(--md-sys-color-primary);
     padding: 8px 15px;
     border-radius: 32px;
     border: 1px solid var(--md-sys-color-outline r g b / 0.1);
+    transition: background-color 0.5s ease, color 0.5s ease;
     
     font-family: 'Google Sans Flex', sans-serif;
     
@@ -336,10 +337,6 @@ i.fa-brands.fa-facebook {
     transition: color 0.5s ease;
 }
 
-.md-typescale-label-large {
-    transition: color 0.5s ease;
-}
-
 /* Customize the scrollbar track (the background) */
 ::-webkit-scrollbar {
     width: 8px;
@@ -360,6 +357,20 @@ i.fa-brands.fa-facebook {
 /* The track background */
 ::-webkit-scrollbar-track {
     background-color: var(--md-sys-color-surface);
+}
+
+/* --- English Font --- */
+html[lang="en"] {
+  font-family: 'Google Sans Flex', sans-serif;
+  --md-sys-typescale-body-medium-line-height: 1.5;
+  --md-sys-typescale-title-large-line-height: 1.2;
+}
+
+/* --- Thai Font--- */
+html[lang="th"] {
+  font-family: 'Itim', cursive;
+  --md-sys-typescale-body-medium-line-height: 1.8;
+  --md-sys-typescale-title-large-line-height: 1.4;
 }
 
 /* --- Light Mode --- */

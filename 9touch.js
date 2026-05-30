@@ -32,6 +32,8 @@ const translations = {
 let currentLang = 'en'; // Default language
 function toggleLanguage() {
     currentLang = currentLang === 'th' ? 'en' : 'th';
+    document.documentElement.setAttribute('lang', currentLang);
+    localStorage.setItem('lang', currentLang);
     updateTranslations();
 }
 
@@ -49,6 +51,10 @@ function updateTranslations() {
     const btn = document.getElementById('lang-toggle');
     if (btn) btn.innerText = translations[currentLang].btn_toggle;
 }
+document.addEventListener('DOMContentLoaded', () => {
+    document.documentElement.setAttribute('lang', currentLang);
+    updateTranslations();
+});
 
 // Theme handling
 const modeSwitch = document.getElementById('theme-toggle');
@@ -73,10 +79,12 @@ contrastSelect.addEventListener('change', applyTheme);
 // Load saved settings
 const savedMode = localStorage.getItem('theme') || 'light';
 const savedContrast = localStorage.getItem('contrast') || 'sc';
+const savedLang = localStorage.getItem('lang') || 'en';
 
 // Set initial states
 modeSwitch.selected = (savedMode === 'dark');
 contrastSelect.value = savedContrast;
+currentLang = savedLang;
 
-// Run once on load to apply the colors from your JSON
+// Autorun on page load
 applyTheme();
